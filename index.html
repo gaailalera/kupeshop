@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;600&display=swap" rel="stylesheet">
-    
+
     <style>
     html {
         scroll-behavior: smooth;
@@ -118,16 +118,13 @@
                     <span class="self-center text-xl font-semibold text-white whitespace-nowrap dark:text-white">Gail</span>
                 </a>
     
-                <!-- Hamburger Button (Hidden on large screens) -->
-                <label for="menu-toggle" class="lg:hidden cursor-pointer text-white absolute right-4">
+                <!-- Hamburger Button (Visible only on small screens) -->
+                <label for="menu-toggle" class="lg:hidden text-semibold cursor-pointer text-white absolute right-4" id="hamburger-btn">
                     <i class="fas fa-bars text-3xl"></i>
                 </label>
     
-                <!-- Hidden Checkbox for Toggling -->
-                <input type="checkbox" id="menu-toggle" class="peer hidden" />
-    
                 <div class="flex items-center lg:order-2">
-                    <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="desktop-menu">
                         <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
                                 <a href="#home" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
@@ -143,24 +140,31 @@
                 </div>
             </div>
     
-            <!-- Mobile Menu (Visible when checkbox is checked) -->
-            <div class="peer-checked:block hidden absolute top-0 left-0 w-full bg-gray-800 lg:hidden">
-                <ul class="flex flex-col items-center p-4 space-y-4">
-                    <li>
-                        <a href="#home" class="text-white py-2 px-4 block">Home</a>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden absolute top-0 right-0 w-[200px] hidden" style="background-color: #3E2723;">
+                <div class="flex justify-start p-4">
+                    <!-- Close button -->
+                    <button id="close-btn" class="text-white text-3xl ml-auto">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <ul class="flex flex-col items-center font-semibold p-4 space-y-4 -mt-4">
+                    <li class="w-full border-b border-white">
+                        <a href="#home" class="text-white py-2 px-4 block text-center">Home</a>
                     </li>
-                    <li>
-                        <a href="#aboutus" class="text-white py-2 px-4 block">About Us</a>
+                    <li class="w-full border-b border-white">
+                        <a href="#aboutus" class="text-white py-2 px-4 block text-center">About Us</a>
                     </li>
-                    <li>
-                        <a href="#products" class="text-white py-2 px-4 block">Products</a>
+                    <li class="w-full border-b border-white">
+                        <a href="#products" class="text-white py-2 px-4 block text-center">Products</a>
                     </li>
                 </ul>
             </div>
+            
         </nav>
     </header>
     
-
+    
         
         <!-- First Section with ID "home" -->
         <section id="home" style="background-color: #D2B48C; padding-top: 120px;" class="dark:bg-gray-900 relative">
@@ -331,7 +335,6 @@
             <span class="text-sm text-white sm:text-center">© January 2025 <a href="#" class="hover:underline">This is created as an online project portfolio</a>. All Rights Reserved.</span>
         </div>
     </footer>
-    
-
+    <script src="script.js"></script>
 </body>
 </html>
